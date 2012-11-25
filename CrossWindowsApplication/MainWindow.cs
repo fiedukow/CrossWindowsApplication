@@ -17,6 +17,7 @@ namespace CrossWindowsApplication
         public MainWindow()
         {
             InitializeComponent();
+            currentDocument = new Document();
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -111,5 +112,46 @@ namespace CrossWindowsApplication
         }
 
         private Document currentDocument;
+
+        void addTreeView()
+        {
+            BookView newView = new BookTreeView(this);
+            newView.MdiParent = this;
+            currentDocument.addView(newView);
+            newView.Show();
+        }
+
+        void addListView()
+        {
+            BookView newView = new BookListView(this);
+            newView.MdiParent = this;
+            currentDocument.addView(newView);
+            newView.Show();
+        }
+
+        private void AddTreeViewButton_Click(object sender, EventArgs e)
+        {
+            addTreeView();
+        }
+
+        private void AddListViewButton_Click(object sender, EventArgs e)
+        {
+            addListView();
+        }
+
+        private void dodajWidokListyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addListView();
+        }
+
+        private void dodajWidokDrzewaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addTreeView();
+        }
+
+        private void addBookButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

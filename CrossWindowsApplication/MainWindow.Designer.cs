@@ -158,12 +158,14 @@
             this.dodajWidokListyToolStripMenuItem.Name = "dodajWidokListyToolStripMenuItem";
             this.dodajWidokListyToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.dodajWidokListyToolStripMenuItem.Text = "Dodaj Widok Listy";
+            this.dodajWidokListyToolStripMenuItem.Click += new System.EventHandler(this.dodajWidokListyToolStripMenuItem_Click);
             // 
             // dodajWidokDrzewaToolStripMenuItem
             // 
             this.dodajWidokDrzewaToolStripMenuItem.Name = "dodajWidokDrzewaToolStripMenuItem";
             this.dodajWidokDrzewaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.dodajWidokDrzewaToolStripMenuItem.Text = "Dodaj Widok Drzewa";
+            this.dodajWidokDrzewaToolStripMenuItem.Click += new System.EventHandler(this.dodajWidokDrzewaToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -350,6 +352,7 @@
             this.AddTreeViewButton.Name = "AddTreeViewButton";
             this.AddTreeViewButton.Size = new System.Drawing.Size(42, 22);
             this.AddTreeViewButton.Text = "+Tree";
+            this.AddTreeViewButton.Click += new System.EventHandler(this.AddTreeViewButton_Click);
             // 
             // AddListViewButton
             // 
@@ -359,6 +362,7 @@
             this.AddListViewButton.Name = "AddListViewButton";
             this.AddListViewButton.Size = new System.Drawing.Size(37, 22);
             this.AddListViewButton.Text = "+List";
+            this.AddListViewButton.Click += new System.EventHandler(this.AddListViewButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -375,6 +379,7 @@
             this.addBookButton.Name = "addBookButton";
             this.addBookButton.Size = new System.Drawing.Size(23, 22);
             this.addBookButton.Text = "Add Book";
+            this.addBookButton.Click += new System.EventHandler(this.addBookButton_Click);
             // 
             // ModifyBookButton
             // 
