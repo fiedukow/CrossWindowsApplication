@@ -84,9 +84,9 @@ namespace CrossWindowsApplication
             if (filter == FilterType.ALL)
                 return true;
             if (filter == FilterType.AFTER)
-                return releaseDate > new DateTime(2012, 11, 10);
+                return releaseDate > new DateTime(2012, 11, 20);
             if (filter == FilterType.BEFORE)
-                return releaseDate < new DateTime(2012, 11, 10);
+                return releaseDate < new DateTime(2012, 11, 20);
 
             return false;
         }

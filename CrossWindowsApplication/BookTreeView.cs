@@ -92,18 +92,9 @@ namespace CrossWindowsApplication
 
         public override void filterItems(FilterType newFiler)
         {
-            bookView.Nodes.Clear();
-            ((MainWindow)parent).fillBooks(this);
-
-            foreach (TreeNode it in bookView.Nodes)
-            {
-                if (it == null)
-                    continue;
-
-                if (!((Book)it.Tag).isInFilter(newFiler))
-                    bookView.Nodes.Remove(it);
-            }
             Filter = newFiler;
+            bookView.Nodes.Clear();            
+            ((MainWindow)parent).fillBooks(this);            
         }
     }
 }

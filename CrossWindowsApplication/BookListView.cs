@@ -86,16 +86,10 @@ namespace CrossWindowsApplication
         }
 
         public override void filterItems(FilterType newFiler)
-        {         
+        {
+            Filter = newFiler;
             bookView.Items.Clear();
             ((MainWindow)parent).fillBooks(this);
-
-            foreach (ListViewItem it in bookView.Items)
-            {
-                if (!((Book)it.Tag).isInFilter(newFiler))
-                    bookView.Items.Remove(it);
-            }
-            Filter = newFiler;
         }
     }
 }
