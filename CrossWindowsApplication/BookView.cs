@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace CrossWindowsApplication
 {
-    abstract class BookView : Form
+    public abstract class BookView : Form
     {
-        BookView(Form parent)
+        public BookView(Form parent)
         {
             this.parent = parent;
         }
