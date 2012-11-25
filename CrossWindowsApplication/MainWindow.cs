@@ -158,7 +158,7 @@ namespace CrossWindowsApplication
         {
             BookDetailsWindow bd = new BookDetailsWindow();
             bd.ShowDialog();
-            if (bd.DialogResult != DialogResult.OK)
+            if (bd.IsBookAccepted)
                 currentDocument.addBook(bd.buildBook());
         }
 
@@ -173,7 +173,7 @@ namespace CrossWindowsApplication
 
             BookDetailsWindow bd = new BookDetailsWindow(toMod);
             bd.ShowDialog();
-            if (bd.DialogResult != DialogResult.OK)
+            if (bd.IsBookAccepted)
             {
                 bd.fillBook(toMod);
                 currentDocument.updateBook(toMod);

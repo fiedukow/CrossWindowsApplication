@@ -15,11 +15,14 @@ namespace CrossWindowsApplication
         public BookDetailsWindow()
         {
             InitializeComponent();
+            TypeBox.DataSource = Enum.GetValues(typeof(BookType));
+            accepted = false;
         }
 
         public BookDetailsWindow(String title, String author, DateTime date, int typeId)
         {
             InitializeComponent();
+            TypeBox.DataSource = Enum.GetValues(typeof(BookType));
             TitleBox.Text = title;
             AuthorBox.Text = author;
             RelCal.SetDate(date);
@@ -29,6 +32,7 @@ namespace CrossWindowsApplication
         public BookDetailsWindow(Book book)
         {
             InitializeComponent();
+            TypeBox.DataSource = Enum.GetValues(typeof(BookType));
             TitleBox.Text = book.Title;
             AuthorBox.Text = book.Author;
             RelCal.SetDate(book.ReleaseDate);
@@ -50,7 +54,21 @@ namespace CrossWindowsApplication
 
         private void OkButton_Click(object sender, EventArgs e)
         {
+            //VALIDATE
+            accepted = true;
             Close();
         }
+
+        private void MyCancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        public Boolean IsBookAccepted
+        {
+            get { return this.accepted; }
+        }
+
+        private bool accepted;
     }
 }

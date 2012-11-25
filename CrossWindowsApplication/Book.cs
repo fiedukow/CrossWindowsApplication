@@ -27,14 +27,31 @@ namespace CrossWindowsApplication
             return result;
         }
 
+        public void updateTagedListViewItem(ListViewItem it)
+        {
+            it.Tag = this;
+            it.Text = title;
+            it.SubItems.Clear();
+            it.SubItems.AddRange(new String[] { author, releaseDate.ToString("dd MMM yyyy"), type.ToString() });            
+        }
+
         public TreeNode produceTagedTreeNode()
         {
-            TreeNode result = new TreeNode(title);            
-            result.Nodes.Add(new TreeNode(author));
-            result.Nodes.Add(new TreeNode(releaseDate.ToString("dd MMM yyyy")));
-            result.Nodes.Add(new TreeNode(type.ToString()));
+            TreeNode result = new TreeNode(title);
+            result.Nodes.Add(new TreeNode("Author: " + author));
+            result.Nodes.Add(new TreeNode("Released: " + releaseDate.ToString("dd MMM yyyy")));
+            result.Nodes.Add(new TreeNode("Type: " + type.ToString()));
             result.Tag = this;
             return result;
+        }
+
+        public void updateTagedTreeNode(TreeNode tn)
+        {
+            tn.Tag = this;
+            tn.Nodes.Clear();
+            tn.Nodes.Add(new TreeNode("Author: " + author));
+            tn.Nodes.Add(new TreeNode("Released: " + releaseDate.ToString("dd MMM yyyy")));
+            tn.Nodes.Add(new TreeNode("Type: " + type.ToString()));
         }
 
         public String Title
