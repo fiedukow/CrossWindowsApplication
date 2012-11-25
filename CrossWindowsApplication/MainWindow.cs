@@ -103,5 +103,13 @@ namespace CrossWindowsApplication
                 childForm.Close();
             }
         }
+
+        public Document CurrentDocument
+        {
+            set { this.currentDocument = value; }
+            get { return this.currentDocument; }
+        }
+
+        private Document currentDocument;
     }
 }

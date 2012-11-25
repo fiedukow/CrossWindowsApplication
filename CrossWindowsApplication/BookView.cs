@@ -19,6 +19,7 @@ namespace CrossWindowsApplication
         public abstract void updateBook(Book toUpdate);
         public abstract void activated();
         public abstract void close();
+        public abstract Book getCurrentlySelected();
 
         protected Form parent;
     }

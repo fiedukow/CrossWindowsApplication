@@ -20,27 +20,53 @@ namespace CrossWindowsApplication
 
         public override void addBook(Book toAdd)
         {
-
+            bookView.Nodes.Add(toAdd.produceTagedTreeNode());
         }
 
         public override void removeBook(Book toRemove)
         {
-
+            foreach (TreeNode ti in bookView.Nodes)
+                if (ti.Tag == toRemove)
+                {
+                    bookView.Nodes.Remove(ti);
+                    return;
+                }
         }
 
         public override void updateBook(Book toUpdate)
         {
-
+            foreach (TreeNode it in bookView.Nodes)
+                if (it.Tag == toUpdate)
+                {
+                    int id = bookView.Nodes.IndexOf(it);
+                    bookView.Nodes.Remove(it);
+                    bookView.Nodes.Insert(id, toUpdate.produceTagedTreeNode());
+                    return;
+                }
         }
 
         public override void activated()
         {
-
+            //send to parten with options are enabled
         }
 
         public override void close()
         {
+            //check if it is not last window
+            //delete from parent
+        }
 
+        public override Book getCurrentlySelected()
+        {
+            TreeNode tn = bookView.SelectedNode;
+
+            if (tn == null)
+                return null;
+
+            if (tn.Parent != null)
+                tn = tn.Parent;
+
+            return (Book) tn.Tag;
         }
     }
 }

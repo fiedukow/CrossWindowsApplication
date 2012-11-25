@@ -21,16 +21,44 @@ namespace CrossWindowsApplication
 
         public ListViewItem produceTagedListViewItem()
         {
-            ListViewItem result = new ListViewItem();
-            result.Tag = this;
+            ListViewItem result = new ListViewItem(title);
+            result.SubItems.AddRange(new String[] { author, releaseDate.ToString("dd MMM yyyy"), type.ToString() });            
+            result.Tag = this;           
             return result;
         }
 
         public TreeNode produceTagedTreeNode()
         {
-            TreeNode result = new TreeNode();
+            TreeNode result = new TreeNode(title);            
+            result.Nodes.Add(new TreeNode(author));
+            result.Nodes.Add(new TreeNode(releaseDate.ToString("dd MMM yyyy")));
+            result.Nodes.Add(new TreeNode(type.ToString()));
             result.Tag = this;
             return result;
+        }
+
+        public String Title
+        {
+            set { this.title = value; }
+            get { return this.title; }
+        }
+
+        public String Author
+        {
+            set { this.author = value; }
+            get { return this.author; }
+        }
+
+        public DateTime ReleaseDate
+        {
+            set { this.releaseDate = value; }
+            get { return this.releaseDate; }
+        }
+
+        public BookType Type
+        {
+            set { this.type = value; }
+            get { return this.type; }
         }
 
         protected String title;

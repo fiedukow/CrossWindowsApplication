@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrossWindowsApplication
 {
-    class Document
+    public class Document
     {
         public Document()
         {
