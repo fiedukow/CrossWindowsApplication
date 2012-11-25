@@ -21,7 +21,8 @@ namespace CrossWindowsApplication
 
         public override void addBook(Book toAdd)
         {
-            bookView.Items.Add(toAdd.produceTagedListViewItem());
+            if (toAdd.isInFilter(Filter))
+                bookView.Items.Add(toAdd.produceTagedListViewItem());
         }
 
         public override void removeBook(Book toRemove)
@@ -51,6 +52,7 @@ namespace CrossWindowsApplication
         {
             ((MainWindow)parent).setBookManagmentOptionsEnabled(bookView.SelectedItems.Count > 0);
             ((MainWindow)parent).setBooksInViewNumber(bookView.Items.Count);
+            ((MainWindow)parent).setFilterInCombo(Filter);
         }
 
         public override void close()
@@ -81,6 +83,19 @@ namespace CrossWindowsApplication
                 return;
 
             e.Cancel = true;
+        }
+
+        public override void filterItems(FilterType newFiler)
+        {         
+            bookView.Items.Clear();
+            ((MainWindow)parent).fillBooks(this);
+
+            foreach (ListViewItem it in bookView.Items)
+            {
+                if (!((Book)it.Tag).isInFilter(newFiler))
+                    bookView.Items.Remove(it);
+            }
+            Filter = newFiler;
         }
     }
 }

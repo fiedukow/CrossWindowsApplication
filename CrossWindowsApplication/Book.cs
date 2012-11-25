@@ -79,6 +79,18 @@ namespace CrossWindowsApplication
             get { return this.type; }
         }
 
+        public bool isInFilter(FilterType filter)
+        {
+            if (filter == FilterType.ALL)
+                return true;
+            if (filter == FilterType.AFTER)
+                return releaseDate > new DateTime(2012, 11, 10);
+            if (filter == FilterType.BEFORE)
+                return releaseDate < new DateTime(2012, 11, 10);
+
+            return false;
+        }
+
         protected String title;
         protected String author;
         protected DateTime releaseDate;

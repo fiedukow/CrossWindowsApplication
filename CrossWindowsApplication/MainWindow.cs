@@ -18,6 +18,14 @@ namespace CrossWindowsApplication
         {
             InitializeComponent();
             currentDocument = new Document();
+            filterBox.DataSource = Enum.GetValues(typeof(FilterType));
+            filterBox.SelectedIndex = 0;
+            dontFilterMark = false;
+        }
+
+        public void setFilterInCombo(FilterType filter)
+        {
+            filterBox.SelectedIndex = (int) filter;
         }
 
         public void setBooksInViewNumber(int nr)
@@ -179,7 +187,8 @@ namespace CrossWindowsApplication
             if (bd.IsBookAccepted)
                 currentDocument.addBook(bd.buildBook());
 
-            ((BookView)ActiveMdiChild).activated();
+            if(((BookView)ActiveMdiChild) != null)
+                ((BookView)ActiveMdiChild).activated();
         }
 
         private void modifyBook()
@@ -199,7 +208,7 @@ namespace CrossWindowsApplication
                 currentDocument.updateBook(toMod);
             }
 
-            ((BookView)ActiveMdiChild).activated();
+            bw.activated();
         }
 
         private void removeBook()
@@ -212,7 +221,7 @@ namespace CrossWindowsApplication
                 return;          
             currentDocument.removeBook(toRm);
 
-            ((BookView)ActiveMdiChild).activated();
+            bw.activated();
         }
 
         private void addBookButton_Click(object sender, EventArgs e)
@@ -248,7 +257,25 @@ namespace CrossWindowsApplication
         private void MainWindow_MdiChildActivate(object sender, EventArgs e)
         {
             BookView bw = (BookView)ActiveMdiChild;
+            if (bw == null)
+                return;
+            dontFilterMark = (bw.Filter != (FilterType)filterBox.SelectedIndex);
             bw.activated();
         }
+
+        private void filterBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dontFilterMark == true)
+            {
+                dontFilterMark = false;
+                return;
+            }
+            BookView bw = (BookView)ActiveMdiChild;
+            if (bw == null)
+                return;
+            bw.filterItems((FilterType)filterBox.SelectedIndex);
+        }
+
+        private bool dontFilterMark;
     }
 }

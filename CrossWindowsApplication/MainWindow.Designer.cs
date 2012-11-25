@@ -70,6 +70,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusBarLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.filterBox = new System.Windows.Forms.ComboBox();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -308,7 +310,8 @@
             this.toolStripSeparator2,
             this.addBookButton,
             this.ModifyBookButton,
-            this.RemoveBookButton});
+            this.RemoveBookButton,
+            this.toolStripSeparator6});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(632, 25);
@@ -426,11 +429,26 @@
             this.StatusBarLabel.Size = new System.Drawing.Size(39, 17);
             this.StatusBarLabel.Text = "Status";
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // filterBox
+            // 
+            this.filterBox.FormattingEnabled = true;
+            this.filterBox.Location = new System.Drawing.Point(244, 24);
+            this.filterBox.Name = "filterBox";
+            this.filterBox.Size = new System.Drawing.Size(121, 21);
+            this.filterBox.TabIndex = 4;
+            this.filterBox.SelectedIndexChanged += new System.EventHandler(this.filterBox_SelectedIndexChanged);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 453);
+            this.Controls.Add(this.filterBox);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -492,6 +510,8 @@
         private System.Windows.Forms.ToolStripButton addBookButton;
         private System.Windows.Forms.ToolStripButton ModifyBookButton;
         private System.Windows.Forms.ToolStripButton RemoveBookButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ComboBox filterBox;
     }
 }
 
