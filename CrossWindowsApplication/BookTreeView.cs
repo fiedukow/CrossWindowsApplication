@@ -96,5 +96,30 @@ namespace CrossWindowsApplication
             bookView.Nodes.Clear();            
             ((MainWindow)parent).fillBooks(this);            
         }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ((MainWindow)parent).addBook();
+        }
+
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ((MainWindow)parent).removeBook();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ((MainWindow)parent).modifyBook();
+        }
+
+        private void bookView_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                editToolStripMenuItem.Enabled = (bookView.SelectedNode != null);
+                removeToolStripMenuItem.Enabled = (bookView.SelectedNode != null);
+                contextMenu.Show(Cursor.Position);
+            }
+        }
     }
 }

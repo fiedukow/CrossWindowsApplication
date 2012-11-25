@@ -180,7 +180,7 @@ namespace CrossWindowsApplication
             addTreeView();
         }
 
-        private void addBook()
+        public void addBook()
         {
             BookDetailsWindow bd = new BookDetailsWindow();
             bd.ShowDialog();
@@ -191,7 +191,7 @@ namespace CrossWindowsApplication
                 ((BookView)ActiveMdiChild).activated();
         }
 
-        private void modifyBook()
+        public void modifyBook()
         {
             BookView bw = (BookView) ActiveMdiChild;
             if(bw == null)
@@ -211,7 +211,7 @@ namespace CrossWindowsApplication
             bw.activated();
         }
 
-        private void removeBook()
+        public void removeBook()
         {
             BookView bw = (BookView)ActiveMdiChild;
             if (bw == null)
