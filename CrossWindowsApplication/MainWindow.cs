@@ -20,6 +20,7 @@ namespace CrossWindowsApplication
             currentDocument = new Document();
             filterBox.DataSource = Enum.GetValues(typeof(FilterType));
             filterBox.SelectedIndex = 0;
+            addListView();
             dontFilterMark = false;
         }
 
