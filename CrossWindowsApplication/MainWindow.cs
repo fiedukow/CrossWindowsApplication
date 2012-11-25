@@ -20,6 +20,11 @@ namespace CrossWindowsApplication
             currentDocument = new Document();
         }
 
+        public void fillBooks(BookView view)
+        {
+            currentDocument.fillBooks(view);
+        }
+
         private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = new Form();
@@ -149,9 +154,71 @@ namespace CrossWindowsApplication
             addTreeView();
         }
 
+        private void addBook()
+        {
+            BookDetailsWindow bd = new BookDetailsWindow();
+            bd.ShowDialog();
+            if (bd.DialogResult != DialogResult.OK)
+                currentDocument.addBook(bd.buildBook());
+        }
+
+        private void modifyBook()
+        {
+            BookView bw = (BookView) ActiveMdiChild;
+            if(bw == null)
+                return;
+            Book toMod = bw.getCurrentlySelected();
+            if (toMod == null)
+                return;
+
+            BookDetailsWindow bd = new BookDetailsWindow(toMod);
+            bd.ShowDialog();
+            if (bd.DialogResult != DialogResult.OK)
+            {
+                bd.fillBook(toMod);
+                currentDocument.updateBook(toMod);
+            }
+        }
+
+        private void removeBook()
+        {
+            BookView bw = (BookView)ActiveMdiChild;
+            if (bw == null)
+                return;
+            Book toRm = bw.getCurrentlySelected();
+            if (toRm == null)
+                return;          
+            currentDocument.removeBook(toRm);
+        }
+
         private void addBookButton_Click(object sender, EventArgs e)
         {
+            addBook();
+        }
 
+        private void ModifyBookButton_Click(object sender, EventArgs e)
+        {
+            modifyBook();
+        }
+
+        private void RemoveBookButton_Click(object sender, EventArgs e)
+        {
+            removeBook();
+        }
+
+        private void addBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addBook();
+        }
+
+        private void editBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            modifyBook();
+        }
+
+        private void removeBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            removeBook();
         }
     }
 }

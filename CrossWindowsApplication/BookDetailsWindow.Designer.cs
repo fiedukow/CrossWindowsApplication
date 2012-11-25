@@ -170,11 +170,14 @@
             this.OkButton.TabIndex = 9;
             this.OkButton.Text = "Ok";
             this.OkButton.UseVisualStyleBackColor = true;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // BookDetailsWindow
             // 
+            this.AcceptButton = this.OkButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CancelButton;
             this.ClientSize = new System.Drawing.Size(547, 285);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "BookDetailsWindow";
@@ -183,8 +186,6 @@
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
-            this.AcceptButton = OkButton;
-            this.CancelButton = CancelButton;
         }
 
         #endregion

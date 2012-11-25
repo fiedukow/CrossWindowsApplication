@@ -194,18 +194,21 @@
             this.addBookToolStripMenuItem.Name = "addBookToolStripMenuItem";
             this.addBookToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addBookToolStripMenuItem.Text = "Add Book";
+            this.addBookToolStripMenuItem.Click += new System.EventHandler(this.addBookToolStripMenuItem_Click);
             // 
             // editBookToolStripMenuItem
             // 
             this.editBookToolStripMenuItem.Name = "editBookToolStripMenuItem";
             this.editBookToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editBookToolStripMenuItem.Text = "Edit Book";
+            this.editBookToolStripMenuItem.Click += new System.EventHandler(this.editBookToolStripMenuItem_Click);
             // 
             // removeBookToolStripMenuItem
             // 
             this.removeBookToolStripMenuItem.Name = "removeBookToolStripMenuItem";
             this.removeBookToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.removeBookToolStripMenuItem.Text = "Remove Book";
+            this.removeBookToolStripMenuItem.Click += new System.EventHandler(this.removeBookToolStripMenuItem_Click);
             // 
             // viewMenu
             // 
@@ -390,6 +393,7 @@
             this.ModifyBookButton.Name = "ModifyBookButton";
             this.ModifyBookButton.Size = new System.Drawing.Size(23, 22);
             this.ModifyBookButton.Text = "Modify Book";
+            this.ModifyBookButton.Click += new System.EventHandler(this.ModifyBookButton_Click);
             // 
             // RemoveBookButton
             // 
@@ -400,6 +404,7 @@
             this.RemoveBookButton.Name = "RemoveBookButton";
             this.RemoveBookButton.Size = new System.Drawing.Size(23, 22);
             this.RemoveBookButton.Text = "Remove Book";
+            this.RemoveBookButton.Click += new System.EventHandler(this.RemoveBookButton_Click);
             // 
             // statusStrip
             // 

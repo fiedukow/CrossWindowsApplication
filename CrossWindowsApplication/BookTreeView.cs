@@ -16,6 +16,7 @@ namespace CrossWindowsApplication
             : base(parent)
         {
             InitializeComponent();
+            ((MainWindow)parent).fillBooks(this);
         }
 
         public override void addBook(Book toAdd)
@@ -25,6 +26,9 @@ namespace CrossWindowsApplication
 
         public override void removeBook(Book toRemove)
         {
+            if (toRemove == null)
+                return;
+
             foreach (TreeNode ti in bookView.Nodes)
                 if (ti.Tag == toRemove)
                 {

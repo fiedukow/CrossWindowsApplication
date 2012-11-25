@@ -45,6 +45,13 @@ namespace CrossWindowsApplication
             views.Add(bv);
         }
 
+        public void fillBooks(BookView view)
+        {
+            foreach (Book book in books)
+                view.addBook(book);
+        }
+
+
         List<Book> books;
         List<BookView> views;
     }

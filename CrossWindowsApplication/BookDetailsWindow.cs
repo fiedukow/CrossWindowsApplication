@@ -47,5 +47,10 @@ namespace CrossWindowsApplication
             book.ReleaseDate = RelCal.SelectionStart;
             book.Type = (BookType) TypeBox.SelectedIndex;
         }
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
