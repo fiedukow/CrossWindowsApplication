@@ -9,3 +9,4 @@ c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\Cr
 c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.pdb
 c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.BookListView.resources
 c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.BookTreeView.resources
+c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.BookDetailsWindow.resources
