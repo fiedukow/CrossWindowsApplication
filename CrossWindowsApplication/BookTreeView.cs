@@ -94,7 +94,8 @@ namespace CrossWindowsApplication
         {
             Filter = newFiler;
             bookView.Nodes.Clear();            
-            ((MainWindow)parent).fillBooks(this);            
+            ((MainWindow)parent).fillBooks(this);
+            activated();
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)

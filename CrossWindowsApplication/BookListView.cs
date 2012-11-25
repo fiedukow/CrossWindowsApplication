@@ -90,6 +90,7 @@ namespace CrossWindowsApplication
             Filter = newFiler;
             bookView.Items.Clear();
             ((MainWindow)parent).fillBooks(this);
+            activated();
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
