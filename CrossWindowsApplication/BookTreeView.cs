@@ -50,6 +50,7 @@ namespace CrossWindowsApplication
         public override void activated()
         {
             ((MainWindow)parent).setBookManagmentOptionsEnabled(bookView.SelectedNode != null);
+            ((MainWindow)parent).setBooksInViewNumber(bookView.Nodes.Count);
         }
 
         public override void close()

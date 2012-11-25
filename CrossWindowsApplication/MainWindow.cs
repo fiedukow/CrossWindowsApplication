@@ -20,6 +20,11 @@ namespace CrossWindowsApplication
             currentDocument = new Document();
         }
 
+        public void setBooksInViewNumber(int nr)
+        {
+            StatusBarLabel.Text = "Showing: " + nr + " books";
+        }
+
         public void fillBooks(BookView view)
         {
             currentDocument.fillBooks(view);
@@ -173,6 +178,8 @@ namespace CrossWindowsApplication
             bd.ShowDialog();
             if (bd.IsBookAccepted)
                 currentDocument.addBook(bd.buildBook());
+
+            ((BookView)ActiveMdiChild).activated();
         }
 
         private void modifyBook()
@@ -191,6 +198,8 @@ namespace CrossWindowsApplication
                 bd.fillBook(toMod);
                 currentDocument.updateBook(toMod);
             }
+
+            ((BookView)ActiveMdiChild).activated();
         }
 
         private void removeBook()
@@ -202,6 +211,8 @@ namespace CrossWindowsApplication
             if (toRm == null)
                 return;          
             currentDocument.removeBook(toRm);
+
+            ((BookView)ActiveMdiChild).activated();
         }
 
         private void addBookButton_Click(object sender, EventArgs e)

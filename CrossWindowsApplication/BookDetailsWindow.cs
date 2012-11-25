@@ -52,9 +52,18 @@ namespace CrossWindowsApplication
             book.Type = (BookType) TypeBox.SelectedIndex;
         }
 
+        private bool validateData()
+        {
+            return (TitleBox.Text != "" && AuthorBox.Text != "");
+        }
+
         private void OkButton_Click(object sender, EventArgs e)
         {
-            //VALIDATE
+            if (!validateData())
+            {
+                MessageBox.Show("Invalid data provided.");
+                return;
+            }
             accepted = true;
             Close();
         }
