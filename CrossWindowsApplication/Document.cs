@@ -51,6 +51,16 @@ namespace CrossWindowsApplication
                 view.addBook(book);
         }
 
+        public bool removeView(BookView bw)
+        {
+            if (views.Count > 1)
+            {
+                views.Remove(bw);
+                return true;
+            }
+            return false;
+        }
+
 
         List<Book> books;
         List<BookView> views;

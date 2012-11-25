@@ -49,6 +49,7 @@
             this.bookView.TabIndex = 0;
             this.bookView.UseCompatibleStateImageBehavior = false;
             this.bookView.View = System.Windows.Forms.View.Details;
+            this.bookView.SelectedIndexChanged += new System.EventHandler(this.bookView_SelectedIndexChanged);
             // 
             // TitleColumn
             // 
@@ -66,14 +67,15 @@
             // 
             this.Type.Text = "Type";
             // 
-            // ListView
+            // BookListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.bookView);
-            this.Name = "ListView";
+            this.Name = "BookListView";
             this.Text = "ListView";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BookListView_FormClosing);
             this.ResumeLayout(false);
 
         }

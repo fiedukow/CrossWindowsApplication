@@ -49,7 +49,7 @@ namespace CrossWindowsApplication
 
         public override void activated()
         {
-            //send to parten with options are enabled
+            ((MainWindow)parent).setBookManagmentOptionsEnabled(bookView.SelectedItems.Count > 0);
         }
 
         public override void close()
@@ -64,6 +64,22 @@ namespace CrossWindowsApplication
                 return null;
 
             return (Book) bookView.SelectedItems[0].Tag;
+        }
+
+        private void bookView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            activated();
+        }
+
+        private void BookListView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (((MainWindow)parent).removeView(this))                         
+                return;
+
+            if (e.CloseReason != CloseReason.UserClosing)
+                return;
+
+            e.Cancel = true;
         }
     }
 }

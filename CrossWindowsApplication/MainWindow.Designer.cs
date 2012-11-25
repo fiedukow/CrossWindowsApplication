@@ -198,6 +198,7 @@
             // 
             // editBookToolStripMenuItem
             // 
+            this.editBookToolStripMenuItem.Enabled = false;
             this.editBookToolStripMenuItem.Name = "editBookToolStripMenuItem";
             this.editBookToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editBookToolStripMenuItem.Text = "Edit Book";
@@ -205,6 +206,7 @@
             // 
             // removeBookToolStripMenuItem
             // 
+            this.removeBookToolStripMenuItem.Enabled = false;
             this.removeBookToolStripMenuItem.Name = "removeBookToolStripMenuItem";
             this.removeBookToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.removeBookToolStripMenuItem.Text = "Remove Book";
@@ -388,6 +390,7 @@
             // 
             this.ModifyBookButton.BackColor = System.Drawing.Color.Yellow;
             this.ModifyBookButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.None;
+            this.ModifyBookButton.Enabled = false;
             this.ModifyBookButton.Image = ((System.Drawing.Image)(resources.GetObject("ModifyBookButton.Image")));
             this.ModifyBookButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ModifyBookButton.Name = "ModifyBookButton";
@@ -399,6 +402,7 @@
             // 
             this.RemoveBookButton.BackColor = System.Drawing.Color.Red;
             this.RemoveBookButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.None;
+            this.RemoveBookButton.Enabled = false;
             this.RemoveBookButton.Image = ((System.Drawing.Image)(resources.GetObject("RemoveBookButton.Image")));
             this.RemoveBookButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RemoveBookButton.Name = "RemoveBookButton";
@@ -434,6 +438,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainWindow";
             this.Text = "MainWindow";
+            this.MdiChildActivate += new System.EventHandler(this.MainWindow_MdiChildActivate);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);

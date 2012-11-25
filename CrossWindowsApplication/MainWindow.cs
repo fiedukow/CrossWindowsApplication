@@ -118,6 +118,19 @@ namespace CrossWindowsApplication
 
         private Document currentDocument;
 
+        public void setBookManagmentOptionsEnabled(bool enable)
+        {
+            RemoveBookButton.Enabled = enable;
+            ModifyBookButton.Enabled = enable;
+            removeBookToolStripMenuItem.Enabled = enable;
+            editBookToolStripMenuItem.Enabled = enable;
+        }
+
+        public bool removeView(BookView bw)
+        {
+            return currentDocument.removeView(bw);
+        }
+
         void addTreeView()
         {
             BookView newView = new BookTreeView(this);
@@ -219,6 +232,12 @@ namespace CrossWindowsApplication
         private void removeBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
             removeBook();
+        }
+
+        private void MainWindow_MdiChildActivate(object sender, EventArgs e)
+        {
+            BookView bw = (BookView)ActiveMdiChild;
+            bw.activated();
         }
     }
 }

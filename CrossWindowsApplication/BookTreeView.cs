@@ -16,7 +16,7 @@ namespace CrossWindowsApplication
             : base(parent)
         {
             InitializeComponent();
-            ((MainWindow)parent).fillBooks(this);
+            ((MainWindow)parent).fillBooks(this);            
         }
 
         public override void addBook(Book toAdd)
@@ -49,7 +49,7 @@ namespace CrossWindowsApplication
 
         public override void activated()
         {
-            //send to parten with options are enabled
+            ((MainWindow)parent).setBookManagmentOptionsEnabled(bookView.SelectedNode != null);
         }
 
         public override void close()
@@ -69,6 +69,22 @@ namespace CrossWindowsApplication
                 tn = tn.Parent;
 
             return (Book) tn.Tag;
+        }
+
+        private void bookView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            activated();
+        }
+
+        private void BookTreeView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (((MainWindow)parent).removeView(this))
+                return;
+
+            if (e.CloseReason != CloseReason.UserClosing)
+                return;
+
+            e.Cancel = true;
         }
     }
 }

@@ -38,15 +38,17 @@
             this.bookView.Name = "bookView";
             this.bookView.Size = new System.Drawing.Size(284, 262);
             this.bookView.TabIndex = 0;
+            this.bookView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.bookView_AfterSelect);
             // 
-            // TreeView
+            // BookTreeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.bookView);
-            this.Name = "TreeView";
+            this.Name = "BookTreeView";
             this.Text = "TreeView";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BookTreeView_FormClosing);
             this.ResumeLayout(false);
 
         }
