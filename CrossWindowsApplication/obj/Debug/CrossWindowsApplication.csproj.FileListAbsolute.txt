@@ -1,0 +1,9 @@
+c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\bin\Debug\CrossWindowsApplication.exe.config
+c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.csprojResolveAssemblyReference.cache
+c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.MainWindow.resources
+c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.Properties.Resources.resources
+c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.csproj.GenerateResource.Cache
+c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\bin\Debug\CrossWindowsApplication.exe
+c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\bin\Debug\CrossWindowsApplication.pdb
+c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.exe
+c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.pdb
