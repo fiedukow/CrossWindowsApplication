@@ -31,8 +31,9 @@ namespace CrossWindowsApplication
         {
             it.Tag = this;
             it.Text = title;
-            it.SubItems.Clear();
-            it.SubItems.AddRange(new String[] { author, releaseDate.ToString("dd MMM yyyy"), type.ToString() });            
+            it.SubItems[1].Text = author;
+            it.SubItems[2].Text = releaseDate.ToString("dd MMM yyyy");
+            it.SubItems[3].Text = type.ToString();
         }
 
         public TreeNode produceTagedTreeNode()
@@ -48,10 +49,10 @@ namespace CrossWindowsApplication
         public void updateTagedTreeNode(TreeNode tn)
         {
             tn.Tag = this;
-            tn.Nodes.Clear();
-            tn.Nodes.Add(new TreeNode("Author: " + author));
-            tn.Nodes.Add(new TreeNode("Released: " + releaseDate.ToString("dd MMM yyyy")));
-            tn.Nodes.Add(new TreeNode("Type: " + type.ToString()));
+            tn.Text = title;
+            tn.Nodes[0].Text = "Author: " + author;
+            tn.Nodes[1].Text = "Released: " + releaseDate.ToString("dd MMM yyyy");
+            tn.Nodes[2].Text = "Type: " + type.ToString();            
         }
 
         public String Title

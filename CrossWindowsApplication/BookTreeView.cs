@@ -42,9 +42,7 @@ namespace CrossWindowsApplication
             foreach (TreeNode it in bookView.Nodes)
                 if (it.Tag == toUpdate)
                 {
-                    int id = bookView.Nodes.IndexOf(it);
-                    bookView.Nodes.Remove(it);
-                    bookView.Nodes.Insert(id, toUpdate.produceTagedTreeNode());
+                    toUpdate.updateTagedTreeNode(it);
                     return;
                 }
         }

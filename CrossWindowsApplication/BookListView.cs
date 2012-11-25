@@ -42,9 +42,7 @@ namespace CrossWindowsApplication
             foreach (ListViewItem it in bookView.Items)
                 if (it.Tag == toUpdate)
                 {
-                    int id = bookView.Items.IndexOf(it);
-                    bookView.Items.Remove(it);
-                    bookView.Items.Insert(id, toUpdate.produceTagedListViewItem());
+                    toUpdate.updateTagedListViewItem(it);
                     return;
                 }
         }
