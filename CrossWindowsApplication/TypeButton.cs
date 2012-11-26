@@ -59,7 +59,7 @@ namespace CrossWindowsApplication
         public BookType CurrentType
         {
             get { return current; }
-            set { current = value; }
+            set { current = value; setCurrentImage(); }
         }
 
         BookType current;

@@ -114,9 +114,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FANTASYImg.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\FANTASY.png" />
   </ItemGroup>
   <ItemGroup>
