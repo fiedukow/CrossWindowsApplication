@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
+using System.IO;
+
 namespace CrossWindowsApplication
 {
     public partial class MainWindow : Form
@@ -51,10 +55,17 @@ namespace CrossWindowsApplication
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            openFileDialog.Filter = "Text Files (*.dat)|*.dat|All Files (*.*)|*.*";
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 string FileName = openFileDialog.FileName;
+                FileStream fs = new FileStream(FileName, FileMode.Open);
+                BinaryFormatter bf = new BinaryFormatter();
+                Document oldDocument = currentDocument;
+                currentDocument = (Document)bf.Deserialize(fs);
+                currentDocument.initViews();
+                oldDocument.killThemAll();
+                addListView();
             }
         }
 
@@ -62,10 +73,11 @@ namespace CrossWindowsApplication
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            saveFileDialog.Filter = "Text Files (*.dat)|*.dat|All Files (*.*)|*.*";
             if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 string FileName = saveFileDialog.FileName;
+                currentDocument.save(FileName);
             }
         }
 

@@ -76,6 +76,9 @@ namespace CrossWindowsApplication
 
         private void BookListView_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (killWinFlag)
+                return;
+
             if (((MainWindow)parent).removeView(this))                         
                 return;
 

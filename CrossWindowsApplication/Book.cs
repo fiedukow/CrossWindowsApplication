@@ -9,6 +9,7 @@ public enum BookType { UNKNOWN, FANTASY, LEARNING };
 
 namespace CrossWindowsApplication
 {
+    [Serializable]
     public class Book
     {
         public Book(String title, String author, DateTime releaseDate, BookType type = BookType.UNKNOWN)

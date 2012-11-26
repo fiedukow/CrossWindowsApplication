@@ -4,8 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
+using System.IO;
+
 namespace CrossWindowsApplication
 {
+    [Serializable]
     public class Document
     {
         public Document()
@@ -61,8 +66,28 @@ namespace CrossWindowsApplication
             return false;
         }
 
+        public void initViews()
+        {
+            views = new List<BookView>();
+        }
+
+        public void killThemAll()
+        {
+            foreach (BookView bw in views)
+                bw.killWin();
+        }
+
+        public void save(String fileName)
+        {
+            FileStream fs = new FileStream(fileName, FileMode.Create);
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(fs, this);
+            fs.Close();
+        }
 
         List<Book> books;
+
+        [NonSerialized]
         List<BookView> views;
     }
 }

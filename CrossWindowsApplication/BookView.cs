@@ -8,13 +8,14 @@ using System.Windows.Forms;
 public enum FilterType { ALL, BEFORE, AFTER };
 
 namespace CrossWindowsApplication
-{
+{    
     public abstract class BookView : Form
     {
         public BookView(Form parent)
         {
             this.parent = parent;
             this.filter = FilterType.ALL;
+            this.killWinFlag = false;
         }
 
         public abstract void addBook(Book toAdd);
@@ -24,6 +25,11 @@ namespace CrossWindowsApplication
         public abstract void close();
         public abstract Book getCurrentlySelected();
         public abstract void filterItems(FilterType newFiler);
+        public void killWin()
+        {
+            killWinFlag = true;
+            Close();
+        }
 
         public FilterType Filter
         {
@@ -33,5 +39,6 @@ namespace CrossWindowsApplication
 
         protected Form parent;
         protected FilterType filter;
+        protected bool killWinFlag;
     }
 }

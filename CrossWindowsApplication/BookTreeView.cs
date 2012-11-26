@@ -81,6 +81,9 @@ namespace CrossWindowsApplication
 
         private void BookTreeView_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (killWinFlag)
+                return;
+
             if (((MainWindow)parent).removeView(this))
                 return;
 
