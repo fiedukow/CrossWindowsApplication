@@ -10,3 +10,15 @@ c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\Cr
 c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.BookListView.resources
 c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.BookTreeView.resources
 c:\users\player\documents\visual studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.BookDetailsWindow.resources
+C:\Users\Yester\Documents\Visual Studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\bin\Debug\CrossWindowsApplication.exe.config
+C:\Users\Yester\Documents\Visual Studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.exe
+C:\Users\Yester\Documents\Visual Studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.pdb
+C:\Users\Yester\Documents\Visual Studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\bin\Debug\CrossWindowsApplication.exe
+C:\Users\Yester\Documents\Visual Studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\bin\Debug\CrossWindowsApplication.pdb
+C:\Users\Yester\Documents\Visual Studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.csprojResolveAssemblyReference.cache
+C:\Users\Yester\Documents\Visual Studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.BookDetailsWindow.resources
+C:\Users\Yester\Documents\Visual Studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.BookListView.resources
+C:\Users\Yester\Documents\Visual Studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.MainWindow.resources
+C:\Users\Yester\Documents\Visual Studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.Properties.Resources.resources
+C:\Users\Yester\Documents\Visual Studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.BookTreeView.resources
+C:\Users\Yester\Documents\Visual Studio 2012\Projects\CrossWindowsApplication\CrossWindowsApplication\obj\Debug\CrossWindowsApplication.csproj.GenerateResource.Cache
