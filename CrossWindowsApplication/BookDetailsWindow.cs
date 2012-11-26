@@ -15,33 +15,30 @@ namespace CrossWindowsApplication
         public BookDetailsWindow()
         {
             InitializeComponent();
-            TypeBox.DataSource = Enum.GetValues(typeof(BookType));
             accepted = false;
         }
 
         public BookDetailsWindow(String title, String author, DateTime date, int typeId)
         {
             InitializeComponent();
-            TypeBox.DataSource = Enum.GetValues(typeof(BookType));
             TitleBox.Text = title;
             AuthorBox.Text = author;
             RelCal.SetDate(date);
-            TypeBox.SelectedIndex = typeId;
+            typeButton.safeSetCurrent((BookType)typeId);
         }
 
         public BookDetailsWindow(Book book)
         {
             InitializeComponent();
-            TypeBox.DataSource = Enum.GetValues(typeof(BookType));
             TitleBox.Text = book.Title;
             AuthorBox.Text = book.Author;
             RelCal.SetDate(book.ReleaseDate);
-            TypeBox.SelectedIndex = (int) book.Type;
+            typeButton.safeSetCurrent(book.Type);
         }
 
         public Book buildBook()
         {
-            return new Book(TitleBox.Text, AuthorBox.Text, RelCal.SelectionStart, (BookType) TypeBox.SelectedIndex);
+            return new Book(TitleBox.Text, AuthorBox.Text, RelCal.SelectionStart, typeButton.CurrentType);
         }
 
         public void fillBook(Book book)
@@ -49,14 +46,14 @@ namespace CrossWindowsApplication
             book.Title = TitleBox.Text;
             book.Author = AuthorBox.Text;
             book.ReleaseDate = RelCal.SelectionStart;
-            book.Type = (BookType) TypeBox.SelectedIndex;
+            book.Type = typeButton.CurrentType;
         }
 
         private bool validateData()
         {
             return (TitleBox.Text != "" && AuthorBox.Text != "");
         }
-
+       
         private void OkButton_Click(object sender, EventArgs e)
         {
             if (!validateData())

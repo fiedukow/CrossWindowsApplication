@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-public enum BookType { UNKNOWN, CRIME, COMMEDY, SF, FANTASY };
+public enum BookType { UNKNOWN, FANTASY, LEARNING };
 
 namespace CrossWindowsApplication
 {

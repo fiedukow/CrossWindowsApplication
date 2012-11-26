@@ -67,11 +67,12 @@
             this.addBookButton = new System.Windows.Forms.ToolStripButton();
             this.ModifyBookButton = new System.Windows.Forms.ToolStripButton();
             this.RemoveBookButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusBarLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.filterBox = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -194,7 +195,7 @@
             // addBookToolStripMenuItem
             // 
             this.addBookToolStripMenuItem.Name = "addBookToolStripMenuItem";
-            this.addBookToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addBookToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.addBookToolStripMenuItem.Text = "Add Book";
             this.addBookToolStripMenuItem.Click += new System.EventHandler(this.addBookToolStripMenuItem_Click);
             // 
@@ -202,7 +203,7 @@
             // 
             this.editBookToolStripMenuItem.Enabled = false;
             this.editBookToolStripMenuItem.Name = "editBookToolStripMenuItem";
-            this.editBookToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editBookToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.editBookToolStripMenuItem.Text = "Edit Book";
             this.editBookToolStripMenuItem.Click += new System.EventHandler(this.editBookToolStripMenuItem_Click);
             // 
@@ -210,7 +211,7 @@
             // 
             this.removeBookToolStripMenuItem.Enabled = false;
             this.removeBookToolStripMenuItem.Name = "removeBookToolStripMenuItem";
-            this.removeBookToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.removeBookToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.removeBookToolStripMenuItem.Text = "Remove Book";
             this.removeBookToolStripMenuItem.Click += new System.EventHandler(this.removeBookToolStripMenuItem_Click);
             // 
@@ -413,6 +414,11 @@
             this.RemoveBookButton.Text = "Remove Book";
             this.RemoveBookButton.Click += new System.EventHandler(this.RemoveBookButton_Click);
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -429,11 +435,6 @@
             this.StatusBarLabel.Size = new System.Drawing.Size(39, 17);
             this.StatusBarLabel.Text = "Status";
             // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
-            // 
             // filterBox
             // 
             this.filterBox.FormattingEnabled = true;
@@ -443,11 +444,21 @@
             this.filterBox.TabIndex = 4;
             this.filterBox.SelectedIndexChanged += new System.EventHandler(this.filterBox_SelectedIndexChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(420, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 453);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.filterBox);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
@@ -512,6 +523,7 @@
         private System.Windows.Forms.ToolStripButton RemoveBookButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ComboBox filterBox;
+        private System.Windows.Forms.Button button1;
     }
 }
 

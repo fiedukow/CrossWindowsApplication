@@ -278,5 +278,6 @@ namespace CrossWindowsApplication
         }
 
         private bool dontFilterMark;
+
     }
 }
