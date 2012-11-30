@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookDetailsWindow));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.TitleBox = new System.Windows.Forms.TextBox();
@@ -39,8 +40,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.MyCancelButton = new System.Windows.Forms.Button();
             this.OkButton = new System.Windows.Forms.Button();
+            this.validator = new System.Windows.Forms.ErrorProvider(this.components);
             this.typeButton = new CrossWindowsApplication.TypeButton();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.validator)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -75,17 +78,21 @@
             // 
             this.TitleBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TitleBox.Location = new System.Drawing.Point(62, 3);
+            this.TitleBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
             this.TitleBox.Name = "TitleBox";
-            this.TitleBox.Size = new System.Drawing.Size(482, 20);
+            this.TitleBox.Size = new System.Drawing.Size(445, 20);
             this.TitleBox.TabIndex = 0;
+            this.TitleBox.Validating += new System.ComponentModel.CancelEventHandler(this.TitleBox_Validating);
             // 
             // AuthorBox
             // 
             this.AuthorBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AuthorBox.Location = new System.Drawing.Point(62, 27);
+            this.AuthorBox.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
             this.AuthorBox.Name = "AuthorBox";
-            this.AuthorBox.Size = new System.Drawing.Size(482, 20);
+            this.AuthorBox.Size = new System.Drawing.Size(445, 20);
             this.AuthorBox.TabIndex = 1;
+            this.AuthorBox.Validating += new System.ComponentModel.CancelEventHandler(this.AuthorBox_Validating);
             // 
             // RelCal
             // 
@@ -165,6 +172,10 @@
             this.OkButton.UseVisualStyleBackColor = true;
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
+            // validator
+            // 
+            this.validator.ContainerControl = this;
+            // 
             // typeButton
             // 
             this.typeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("typeButton.BackgroundImage")));
@@ -188,6 +199,7 @@
             this.Text = "BookDetailsWindow";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.validator)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,5 +217,6 @@
         private System.Windows.Forms.Button MyCancelButton;
         private System.Windows.Forms.Button OkButton;
         private TypeButton typeButton;
+        private System.Windows.Forms.ErrorProvider validator;
     }
 }

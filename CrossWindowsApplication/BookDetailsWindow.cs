@@ -76,5 +76,29 @@ namespace CrossWindowsApplication
         }
 
         private bool accepted;
+
+        private void TitleBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (TitleBox.Text == "")
+            {
+                OkButton.Enabled = false;
+                validator.SetError(TitleBox, ":(");
+                return;
+            }
+            validator.SetError(TitleBox, "");
+            OkButton.Enabled = true;
+        }
+
+        private void AuthorBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (AuthorBox.Text == "")
+            {
+                OkButton.Enabled = false;
+                validator.SetError(AuthorBox, ":(");
+                return;
+            }
+            validator.SetError(AuthorBox, "");
+            OkButton.Enabled = true;
+        }
     }
 }

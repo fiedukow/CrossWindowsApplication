@@ -5,12 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.ComponentModel;
+
 
 namespace CrossWindowsApplication
 {
     public class TypeButton : Button
     {
-        public TypeButton()
+        public TypeButton() 
         {            
             Text = "";
             this.Click += new System.EventHandler(this.swap);
@@ -21,6 +24,9 @@ namespace CrossWindowsApplication
             : this()
         {
             current = begin;
+            this.Width = 482;
+            this.Height = 114;
+            setCurrentImage();
         }
 
         void swap(object sender, EventArgs e)
@@ -56,6 +62,9 @@ namespace CrossWindowsApplication
             setCurrentImage();
         }
 
+        [EditorAttribute(typeof(TypeButtonEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [Category("Moje kontrolki")]
+        [BrowsableAttribute(true)]
         public BookType CurrentType
         {
             get { return current; }

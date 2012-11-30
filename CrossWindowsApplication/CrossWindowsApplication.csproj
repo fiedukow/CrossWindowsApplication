@@ -78,6 +78,7 @@
     <Compile Include="TypeButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="TypeButtonEditor.cs" />
     <EmbeddedResource Include="BookDetailsWindow.resx">
       <DependentUpon>BookDetailsWindow.cs</DependentUpon>
     </EmbeddedResource>

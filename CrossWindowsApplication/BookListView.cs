@@ -43,9 +43,16 @@ namespace CrossWindowsApplication
             foreach (ListViewItem it in bookView.Items)
                 if (it.Tag == toUpdate)
                 {
+                    if (!toUpdate.isInFilter(Filter))
+                    {
+                        removeBook(toUpdate);
+                        return;
+                    }
                     toUpdate.updateTagedListViewItem(it);
                     return;
                 }
+            if (toUpdate.isInFilter(Filter))
+                addBook(toUpdate);
         }
 
         public override void activated()
